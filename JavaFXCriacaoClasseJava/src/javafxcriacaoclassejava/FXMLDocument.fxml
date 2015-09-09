@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="712.0" prefWidth="1212.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxcriacaoclassejava.FXMLDocumentController">
+   <children>
+      <TextFlow fx:id="textFlowEsq" layoutX="50.0" layoutY="30.0" prefHeight="260.0" prefWidth="270.0" />
+      <Button fx:id="btGerar" layoutX="537.0" layoutY="306.0" mnemonicParsing="false" onAction="#encherTextFlow" text="Gerar" />
+      <Label fx:id="label3" layoutX="670.0" layoutY="331.0" minHeight="16" minWidth="69" text="Tipo: " />
+      <Label fx:id="label11" layoutX="670.0" layoutY="355.0" minHeight="16" minWidth="69" text="Nome da classe: " />
+      <ComboBox fx:id="cbTipoDirecao" disable="true" layoutX="524.0" layoutY="416.0" prefHeight="25.0" prefWidth="120.0" />
+      <ComboBox fx:id="cbTipoRelacionamento" layoutX="524.0" layoutY="370.0" onHidden="#setarRelacionamento" prefHeight="25.0" prefWidth="120.0" />
+      <ComboBox fx:id="tipoClassificadorCbEsq" layoutX="370.0" layoutY="324.0" onHidden="#configurarParteEsq" prefHeight="25.0" prefWidth="120.0" />
+      <Label fx:id="label21" layoutX="558.0" layoutY="397.0" minHeight="16" minWidth="69" text="Direção: " />
+      <Label fx:id="label2" layoutX="540.0" layoutY="347.0" minHeight="16" minWidth="69" text="Relacionamento: " />
+      <Label fx:id="label1" layoutX="263.0" layoutY="356.0" minHeight="16" minWidth="69" text="Nome da classe: " />
+      <Label fx:id="label" layoutX="263.0" layoutY="332.0" minHeight="16" minWidth="69" text="Tipo: " />
+      <TextField fx:id="txfNomeClasseEsq" layoutX="370.0" layoutY="352.0" onKeyReleased="#verificadorNomeClasseEsq" prefHeight="25.0" prefWidth="120.0" />
+      <TextField fx:id="txfNomeClasseDir" layoutX="777.0" layoutY="351.0" onKeyReleased="#verificadorNomeClasseDir" prefHeight="25.0" prefWidth="120.0" />
+      <Accordion layoutX="229.0" layoutY="557.0" />
+      <Accordion layoutX="72.0" layoutY="406.0" prefHeight="230.0" prefWidth="429.0">
+        <panes>
+          <TitledPane fx:id="gerenciarAtributoEsq" animated="false" prefHeight="201.0" prefWidth="429.0" text="Gerenciar Atributos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="357.0">
+                     <children>
+                        <Label fx:id="lbAtributoEsq1" layoutX="80.0" layoutY="7.0" prefHeight="17.0" prefWidth="133.0" />
+                        <Label fx:id="lbAtributoEsq2" layoutX="80.0" layoutY="24.0" prefHeight="17.0" prefWidth="136.0" />
+                        <Label fx:id="lbAtributoEsq3" layoutX="80.0" layoutY="41.0" prefHeight="17.0" prefWidth="136.0" />
+                        <ComboBox fx:id="cbTipoAtributoEsq" layoutX="294.0" layoutY="85.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txfAtributoEsq" layoutX="154.0" layoutY="86.0" onKeyReleased="#verificadorNomeAtributoEsq" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="308.0" layoutY="67.0" text="Tipo do Atributo:" />
+                        <Label layoutX="164.0" layoutY="69.0" text="Nome do Atributo:" />
+                        <Label layoutX="19.0" layoutY="7.0" text="Atributo 1: " />
+                        <Label layoutX="19.0" layoutY="24.0" text="Atributo 2: " />
+                        <Label layoutX="19.0" layoutY="41.0" text="Atributo 3: " />
+                        <Button fx:id="btAdicionaAtributoEsq" layoutX="107.0" layoutY="129.0" mnemonicParsing="false" onAction="#adicionaAtributoEsq" prefHeight="25.0" prefWidth="107.0" text="Adicionar" />
+                        <Button fx:id="btDeletaAtributoEsq" layoutX="213.0" layoutY="129.0" mnemonicParsing="false" onAction="#deletaAtributoEsq" prefHeight="25.0" prefWidth="107.0" text="Deletar" />
+                        <Label layoutX="41.0" layoutY="69.0" text="Visibilidade: " />
+                        <ComboBox fx:id="esqAtributoVisibilidade" layoutX="14.0" layoutY="86.0" prefHeight="25.0" prefWidth="120.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="253.0" prefWidth="429.0" text="Gerenciar Metodos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="227.0">
+                     <children>
+                        <Label fx:id="lbMetodoEsq1" layoutX="78.0" layoutY="6.0" prefHeight="17.0" prefWidth="136.0" />
+                        <Label fx:id="lbMetodoEsq2" layoutX="78.0" layoutY="23.0" prefHeight="17.0" prefWidth="134.0" />
+                        <Label fx:id="lbMetodoEsq3" layoutX="78.0" layoutY="40.0" prefHeight="17.0" prefWidth="135.0" />
+                        <ComboBox fx:id="cbTipoMetodoEsq" layoutX="295.0" layoutY="83.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txfMetodoEsq" layoutX="155.0" layoutY="83.0" onKeyReleased="#verificadorNomeMetodoEsq" prefHeight="25.0" prefWidth="120.0" />
+                        <Button fx:id="btAdicionaMetodoEsq" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" onAction="#adicionaMetodoEsq" prefHeight="25.0" prefWidth="107.0" text="Adicionar" />
+                        <Button fx:id="btDeletaMetodoEsq" layoutX="212.0" layoutY="129.0" mnemonicParsing="false" onAction="#deletaMetodoEsq" prefHeight="25.0" prefWidth="107.0" text="Deletar" />
+                        <Label layoutX="300.0" layoutY="65.0" text="Retorno do Metodo:" />
+                        <Label layoutX="154.0" layoutY="66.0" text="Assinatura do Metodo:" />
+                        <Label layoutX="17.0" layoutY="6.0" text="Metodo 1: " />
+                        <Label layoutX="17.0" layoutY="23.0" text="Metodo 2: " />
+                        <Label layoutX="17.0" layoutY="40.0" text="Metodo 3: " />
+                        <ComboBox fx:id="esqMetodoVisibilidade" layoutX="14.0" layoutY="83.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="40.0" layoutY="66.0" text="Visibilidade: " />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+      <Button layoutX="584.0" layoutY="306.0" mnemonicParsing="false" onAction="#limparTela" text="Limpar" />
+      <Separator layoutX="45.0" layoutY="297.0" prefHeight="8.0" prefWidth="1132.0" />
+      <Separator layoutX="386.0" layoutY="7.0" orientation="VERTICAL" prefHeight="284.0" prefWidth="0.0" />
+      <Rectangle fx:id="retanguloEsq" arcHeight="5.0" arcWidth="5.0" fill="#deed5a" height="205.0" layoutX="405.0" layoutY="62.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" visible="false" width="157.0" />
+      <Line fx:id="retanguloEsqLinha1" endX="100.0" layoutX="483.0" layoutY="102.0" scaleX="0.78" startX="-99.0" visible="false" />
+      <Line fx:id="retanguloEsqLinha2" endX="100.0" layoutX="483.0" layoutY="183.0" scaleX="0.78" startX="-99.0" visible="false" />
+      <Label fx:id="tabEsqNome" alignment="CENTER" layoutX="410.0" layoutY="75.0" prefHeight="17.0" prefWidth="141.0" text="Nome da Classe 1" textAlignment="CENTER" visible="false" />
+      <Label fx:id="tabEsqAtrib1" layoutX="410.0" layoutY="112.0" prefHeight="17.0" prefWidth="141.0" text="Atributo11" visible="false" />
+      <Label fx:id="tabEsqAtrib2" layoutX="410.0" layoutY="129.0" prefHeight="17.0" prefWidth="141.0" text="Atributo12" visible="false" />
+      <Label fx:id="tabEsqAtrib3" layoutX="410.0" layoutY="146.0" prefHeight="17.0" prefWidth="141.0" text="Atributo13" visible="false" />
+      <Label fx:id="tabEsqMet3" layoutX="413.0" layoutY="226.0" prefHeight="17.0" prefWidth="141.0" text="Metodo13" visible="false" />
+      <Label fx:id="tabEsqMet2" layoutX="413.0" layoutY="209.0" prefHeight="17.0" prefWidth="141.0" text="Metodo12" visible="false" />
+      <Rectangle fx:id="retanguloDir" arcHeight="5.0" arcWidth="5.0" fill="#deed5a" height="205.0" layoutX="665.0" layoutY="62.0" opacity="0.5" stroke="BLACK" strokeType="INSIDE" visible="false" width="157.0" />
+      <Label fx:id="tabEsqMet1" layoutX="413.0" layoutY="192.0" prefHeight="17.0" prefWidth="141.0" text="Metodo11" visible="false" />
+      <Label fx:id="tabDirMet1" layoutX="673.0" layoutY="192.0" prefHeight="17.0" prefWidth="141.0" text="Metodo11" visible="false" />
+      <Label fx:id="tabDirMet2" layoutX="673.0" layoutY="209.0" prefHeight="17.0" prefWidth="141.0" text="Metodo12" visible="false" />
+      <Label fx:id="tabDirMet3" layoutX="673.0" layoutY="226.0" prefHeight="17.0" prefWidth="141.0" text="Metodo13" visible="false" />
+      <Label fx:id="tabDirAtrib3" layoutX="670.0" layoutY="146.0" prefHeight="17.0" prefWidth="141.0" text="Atributo13" visible="false" />
+      <Label fx:id="tabDirAtrib2" layoutX="670.0" layoutY="129.0" prefHeight="17.0" prefWidth="141.0" text="Atributo12" visible="false" />
+      <Label fx:id="tabDirAtrib1" layoutX="670.0" layoutY="112.0" prefHeight="17.0" prefWidth="141.0" text="Atributo11" visible="false" />
+      <Label fx:id="tabDirNome" alignment="CENTER" layoutX="670.0" layoutY="75.0" prefHeight="17.0" prefWidth="141.0" text="Nome da Classe 2" textAlignment="CENTER" visible="false" />
+      <Line fx:id="retanguloDirLinha2" endX="97.0" layoutX="724.0" layoutY="183.0" startX="-58.0" visible="false" />
+      <Line fx:id="retanguloDirLinha1" endX="97.0" layoutX="724.0" layoutY="102.0" startX="-58.0" visible="false" />
+      <Line fx:id="linhaUnica" endX="3.0" layoutX="662.0" layoutY="155.0" startX="-100.0" visible="false" />
+      <Polygon fx:id="flechaDireita" fill="WHITE" layoutX="654.0" layoutY="165.0" rotate="90.0" scaleX="0.25" scaleY="0.25" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <Polygon fx:id="flechaEsquerda" fill="WHITE" layoutX="573.0" layoutY="165.0" rotate="-90.0" scaleX="0.25" scaleY="0.25" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" visible="false">
+         <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+         </points>
+      </Polygon>
+      <Label fx:id="linhaDependencia" layoutX="564.0" layoutY="146.0" text="---------------------" visible="false" />
+      <Line fx:id="linhaDirCima" endX="100.0" layoutX="662.0" layoutY="152.0" rotate="45.0" scaleX="0.05" startX="-100.0" visible="false" />
+      <Line fx:id="linhaDirBaixo" endX="100.0" layoutX="662.0" layoutY="159.0" rotate="-45.0" scaleX="0.05" startX="-100.0" visible="false" />
+      <Line fx:id="linhaEsqBaixo" endX="100.0" layoutX="566.0" layoutY="159.0" rotate="45.0" scaleX="0.05" startX="-100.0" visible="false" />
+      <Line fx:id="linhaEsqCima" endX="100.0" layoutX="566.0" layoutY="152.0" rotate="-45.0" scaleX="0.05" startX="-100.0" visible="false" />
+      <Separator layoutX="836.0" layoutY="7.0" orientation="VERTICAL" prefHeight="284.0" prefWidth="7.0" />
+      <TextFlow fx:id="textFlowDir" layoutX="874.0" layoutY="26.0" prefHeight="260.0" prefWidth="270.0" />
+      <Accordion layoutX="667.0" layoutY="406.0" prefHeight="230.0" prefWidth="429.0">
+         <panes>
+            <TitledPane fx:id="gerenciarAtributoDir" animated="false" prefHeight="201.0" prefWidth="429.0" text="Gerenciar Atributos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="357.0">
+                     <children>
+                        <Label fx:id="lbAtributoDir1" layoutX="80.0" layoutY="7.0" prefHeight="17.0" prefWidth="133.0" />
+                        <Label fx:id="lbAtributoDir2" layoutX="80.0" layoutY="24.0" prefHeight="17.0" prefWidth="136.0" />
+                        <Label fx:id="lbAtributoDir3" layoutX="80.0" layoutY="41.0" prefHeight="17.0" prefWidth="136.0" />
+                        <ComboBox fx:id="cbTipoAtributoDir" layoutX="294.0" layoutY="85.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txfAtributoDir" layoutX="154.0" layoutY="86.0" onKeyReleased="#verificadorNomeAtributoDir" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="308.0" layoutY="67.0" text="Tipo do Atributo:" />
+                        <Label layoutX="164.0" layoutY="69.0" text="Nome do Atributo:" />
+                        <Label layoutX="19.0" layoutY="7.0" text="Atributo 1: " />
+                        <Label layoutX="19.0" layoutY="24.0" text="Atributo 2: " />
+                        <Label layoutX="19.0" layoutY="41.0" text="Atributo 3: " />
+                        <Button fx:id="btAdicionaAtributoDir" layoutX="107.0" layoutY="129.0" mnemonicParsing="false" onAction="#adicionaAtributoDir" prefHeight="25.0" prefWidth="107.0" text="Adicionar" />
+                        <Button fx:id="btDeletaAtributoDir" layoutX="213.0" layoutY="129.0" mnemonicParsing="false" onAction="#deletaAtributoDir" prefHeight="25.0" prefWidth="107.0" text="Deletar" />
+                        <Label layoutX="41.0" layoutY="69.0" text="Visibilidade: " />
+                        <ComboBox fx:id="dirAtributoVisibilidade" layoutX="14.0" layoutY="86.0" prefHeight="25.0" prefWidth="120.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="253.0" prefWidth="429.0" text="Gerenciar Metodos">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="302.0" prefWidth="227.0">
+                     <children>
+                        <Label fx:id="lbMetodoDir1" layoutX="78.0" layoutY="6.0" prefHeight="17.0" prefWidth="136.0" />
+                        <Label fx:id="lbMetodoDir2" layoutX="78.0" layoutY="23.0" prefHeight="17.0" prefWidth="134.0" />
+                        <Label fx:id="lbMetodoDir3" layoutX="78.0" layoutY="40.0" prefHeight="17.0" prefWidth="135.0" />
+                        <ComboBox fx:id="cbTipoMetodoDir" layoutX="295.0" layoutY="83.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txfMetodoDir" layoutX="155.0" layoutY="83.0" onKeyReleased="#verificadorNomeMetodoDir" prefHeight="25.0" prefWidth="120.0" />
+                        <Button fx:id="btAdicionaMetodoDir" layoutX="106.0" layoutY="129.0" mnemonicParsing="false" onAction="#adicionaMetodoDir" prefHeight="25.0" prefWidth="107.0" text="Adicionar" />
+                        <Button fx:id="btDeletaMetodoDir" layoutX="212.0" layoutY="129.0" mnemonicParsing="false" onAction="#deletaMetodoDir" prefHeight="25.0" prefWidth="107.0" text="Deletar" />
+                        <Label layoutX="300.0" layoutY="65.0" text="Retorno do Metodo:" />
+                        <Label layoutX="154.0" layoutY="66.0" text="Assinatura do Metodo:" />
+                        <Label layoutX="17.0" layoutY="6.0" text="Metodo 1: " />
+                        <Label layoutX="17.0" layoutY="23.0" text="Metodo 2: " />
+                        <Label layoutX="17.0" layoutY="40.0" text="Metodo 3: " />
+                        <ComboBox fx:id="dirMetodoVisibilidade" layoutX="14.0" layoutY="83.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="40.0" layoutY="66.0" text="Visibilidade: " />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <Label fx:id="tabEsqInter" alignment="CENTER" layoutX="410.0" layoutY="65.0" prefHeight="17.0" prefWidth="141.0" text="&lt;&lt;interface&gt;&gt;" textAlignment="CENTER" visible="false" />
+      <Label fx:id="tabDirInter" alignment="CENTER" layoutX="670.0" layoutY="65.0" prefHeight="17.0" prefWidth="141.0" text="&lt;&lt;interface&gt;&gt;" textAlignment="CENTER" visible="false" />
+      <CheckBox fx:id="checkClassEsq" layoutX="389.0" layoutY="383.0" mnemonicParsing="false" text="Classe Abstrata" />
+      <CheckBox fx:id="checkClassDir" layoutX="670.0" layoutY="383.0" mnemonicParsing="false" text="Classe Abstrata" />
+      <ComboBox fx:id="tipoClassificadorCbDir" layoutX="777.0" layoutY="324.0" onHidden="#configurarParteDir" prefHeight="25.0" prefWidth="120.0" />
+      <CheckBox fx:id="checkSuperClassEsq" layoutX="263.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#verificaSuperClasseAtivaEsq" text="SuperClasse" />
+      <CheckBox fx:id="checkSuperClassDir" layoutX="811.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#verificaSuperClasseAtivaDir" text="SuperClasse" />
+      <Polygon fx:id="diamanteDireito1" layoutX="654.0" layoutY="167.0" rotate="90.0" scaleX="0.25" scaleY="0.25" stroke="BLACK" strokeType="INSIDE" visible="false">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
+      <Polygon fx:id="diamanteDireito2" layoutX="629.0" layoutY="167.0" rotate="-90.0" scaleX="0.25" scaleY="0.25" stroke="BLACK" strokeType="INSIDE" visible="false">
+         <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+         </points>
+      </Polygon>
+      <Polygon fx:id="diamanteEsquerdo1" layoutX="574.0" layoutY="167.0" rotate="-90.0" scaleX="0.25" scaleY="0.25" stroke="BLACK" strokeType="INSIDE" visible="false">
+         <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+         </points>
+      </Polygon>
+      <Polygon fx:id="diamanteEsquerdo2" layoutX="599.0" layoutY="167.0" rotate="90.0" scaleX="0.25" scaleY="0.25" stroke="BLACK" strokeType="INSIDE" visible="false">
+         <points>
+            <Double fx:value="-50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="50.0" />
+            <Double fx:value="40.0" />
+            <Double fx:value="0.0" />
+            <Double fx:value="-60.0" />
+         </points>
+      </Polygon>
+      <Button fx:id="btTutorial" layoutX="72.0" layoutY="312.0" mnemonicParsing="false" onMouseClicked="#proximoPasso" text="Próximo Passo" />
+   </children>
+</AnchorPane>
